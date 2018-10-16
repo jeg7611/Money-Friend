@@ -3,16 +3,16 @@ var router = express.Router();
 var db = require('../queries');
 
 
-router.get('/api/puppies', db.getAllPuppies);
-router.get('/api/puppies/:id', db.getSinglePuppy);
-router.post('/api/puppies', db.createPuppy);
-router.put('/api/puppies/:id', db.updatePuppy);
-router.delete('/api/puppies/:id', db.removePuppy);
+router.get('/api/clients', db.getAllClients);
+router.get('/api/clients/:id', db.getSingleClient);
+router.post('/api/clients', db.createClient);
+router.put('/api/clients/:id', db.updateClient);
+router.delete('/api/clients/:id', db.removeClient);
 
 // application -------------------------------------------------------------
 router.get('/', function (req, res) {
 
-    res.render('index', {title: 'node-postgres-promises'}); // load the single view file (angular will handle the page changes on the front-end)
+    res.render('index', {title: 'Rest MoneyFriend'}); // load the single view file (angular will handle the page changes on the front-end)
 });
 
 module.exports = router;
