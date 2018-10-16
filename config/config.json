@@ -1,0 +1,29 @@
+{
+  "development": {
+    "username": "cvltuhil",
+    "password": "wnfDs6p4w4psaQEzIwRYSwJymEGITk1E",
+    "database": "cvltuhil",
+    "host": "stampy.db.elephantsql.com",
+    "dialect": "postgres",
+    "operatorsAliases": "false",
+    "logging": false
+  },
+  "test": {
+    "username": "cvltuhil",
+    "password": "wnfDs6p4w4psaQEzIwRYSwJymEGITk1E",
+    "database": "cvltuhil",
+    "host": "stampy.db.elephantsql.com",
+    "dialect": "postgres",
+    "operatorsAliases": "false",
+    "logging": false
+  },
+  "production": {
+    "username": "cvltuhil",
+    "password": "wnfDs6p4w4psaQEzIwRYSwJymEGITk1E",
+    "database": "cvltuhil",
+    "host": "stampy.db.elephantsql.com",
+    "dialect": "postgres",
+    "operatorsAliases": "false",
+    "logging": false
+  }
+}
