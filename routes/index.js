@@ -1,18 +1,23 @@
 var express = require('express');
 var router = express.Router();
 var db = require('../queries');
+const clientesController = require('../controllers').clientes;
 
-
-router.get('/api/puppies', db.getAllPuppies);
-router.get('/api/puppies/:id', db.getSinglePuppy);
-router.post('/api/puppies', db.createPuppy);
-router.put('/api/puppies/:id', db.updatePuppy);
-router.delete('/api/puppies/:id', db.removePuppy);
-
-// application -------------------------------------------------------------
-router.get('/', function (req, res) {
-
-    res.render('index', {title: 'node-postgres-promises'}); // load the single view file (angular will handle the page changes on the front-end)
+/* GET home page. */
+router.get('/', function (req, res, next) {
+    res.render('index', { title: 'Express' });
 });
+
+/* Classroom Router */
+router.get('/api/clientes', clientesController.list);
+router.get('/api/clientes/:id', clientesController.getById);
+
+
+router.get('/api/clients', db.getAllClients);
+router.get('/api/clients/:id', db.getSingleClient);
+router.post('/api/clients', db.createClient);
+router.put('/api/clients/:id', db.updateClient);
+router.delete('/api/clients/:id', db.removeClient);
+
 
 module.exports = router;
