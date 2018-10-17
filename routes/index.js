@@ -1,6 +1,6 @@
 
 var express = require('express'),
-app     = express();
+    app = express();
 
 var router = express.Router();
 var db = require('../queries');
@@ -22,12 +22,11 @@ router.post('/api/clients', db.createClient);
 router.put('/api/clients/:id', db.updateClient);
 router.delete('/api/clients/:id', db.removeClient);
 
+var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
+    ip = process.env.IP || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
+
+app.listen(port, ip);
+console.log('Server running on http://%s:%s', ip, port);
 
 module.exports = router;
-
-var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
-    ip   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
- 
-    app.listen(port, ip);
-    console.log('Server running on http://%s:%s', ip, port);
 
