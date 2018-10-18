@@ -2,6 +2,10 @@
 var express = require('express'),
     app = express();
 
+var cors = require('cors');
+
+app.use(cors());
+
 var router = express.Router();
 var db = require('../queries');
 const clientesController = require('../controllers').clientes;
