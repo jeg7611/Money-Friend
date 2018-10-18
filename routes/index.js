@@ -4,17 +4,6 @@ var express = require('express'),
 
 var cors = require('cors');
 
-app.use(cors());
-
-app.use((req,res,next) => {
-
-    res.header("Access-Control-Allow-Origin","*");
-    res.header("Access-Control-Allow-Methods", "POST, GET");
-    res.header("Access-Control-Allow-Header","Origin, X-Requested-With, Content-Type, Accept");
-    next();
-
-});
-
 var router = express.Router();
 var db = require('../queries');
 const clientesController = require('../controllers').clientes;
@@ -34,6 +23,17 @@ router.get('/api/clients/:id', db.getSingleClient);
 router.post('/api/clients', db.createClient);
 router.put('/api/clients/:id', db.updateClient);
 router.delete('/api/clients/:id', db.removeClient);
+
+app.use(cors());
+
+app.use((req,res,next) => {
+
+    res.header("Access-Control-Allow-Origin","*");
+    res.header("Access-Control-Allow-Methods", "POST, GET");
+    res.header("Access-Control-Allow-Header","Origin, X-Requested-With, Content-Type, Accept");
+    next();
+
+});
 
 module.exports = router;
 
